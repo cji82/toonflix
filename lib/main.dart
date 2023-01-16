@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/Button.dart';
-
-class Player {
-  String? name;
-  Player({required this.name});
-}
+import 'package:toonflix/widgets/currency_card.dart';
 
 void main() {
-  var nico = Player(name: "nico");
-  print(nico.name);
   runApp(App());
 }
 
@@ -17,8 +11,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: const Color(0xFF181818),
-          body: Padding(
+        backgroundColor: const Color(0xFF181818),
+        body: SingleChildScrollView(
+          child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +45,7 @@ class App extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 120,
+                  height: 70,
                 ),
                 Text(
                   "Total Blance",
@@ -74,7 +69,7 @@ class App extends StatelessWidget {
                   height: 30,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: const [
                     Button(
                       text: 'Tranfer',
@@ -88,9 +83,62 @@ class App extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 100,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Wallets',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      'View All',
+                      style: TextStyle(
+                        color: Colors.white.withOpacity(0.8),
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const CurrencyCard(
+                  name: 'Euro',
+                  code: 'EUR',
+                  amount: '6 428',
+                  icon: Icons.euro_rounded,
+                  isInverted: false,
+                  oreder: 0,
+                ),
+                const CurrencyCard(
+                  name: 'Bitcoin',
+                  code: 'BTC',
+                  amount: '9 875',
+                  icon: Icons.currency_bitcoin,
+                  isInverted: true,
+                  oreder: 1,
+                ),
+                const CurrencyCard(
+                  name: 'Dollar',
+                  code: 'USD',
+                  amount: '5 272',
+                  icon: Icons.monetization_on_outlined,
+                  isInverted: false,
+                  oreder: 2,
+                ),
               ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
