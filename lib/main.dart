@@ -84,7 +84,7 @@ class App extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 100,
+                  height: 70,
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
