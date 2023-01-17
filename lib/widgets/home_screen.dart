@@ -49,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
     timer.cancel();
     setState(() {
       isRunning = false;
-      //_hide();
     });
   }
 
