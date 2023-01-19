@@ -7,8 +7,6 @@ import 'package:toonflix/widgets/webtoon_widget.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final Future<List<WebtoonModel>> webtoons = ApiService.getTodaysToons();
-  final String proxyUrl =
-      "http://lovec.ipdisk.co.kr:8000/url_proxy.php?proxy_url=";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,7 +64,7 @@ class HomeScreen extends StatelessWidget {
             title: webtoon.title,
             thumb: webtoon.thumb,
             id: webtoon.id,
-            proxyUrl: proxyUrl,
+            //proxyUrl: proxyUrl,
           );
         },
         separatorBuilder: (context, index) => const SizedBox(

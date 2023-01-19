@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:toonflix/widgets/detail_screen.dart';
 
 class Webtoon extends StatelessWidget {
-  final String title, thumb, id, proxyUrl;
+  final String title, thumb, id /*, proxyUrl*/;
   const Webtoon({
     super.key,
     required this.title,
     required this.thumb,
     required this.id,
-    required this.proxyUrl,
+    //required this.proxyUrl,
   });
 
   @override
@@ -22,7 +22,7 @@ class Webtoon extends StatelessWidget {
               title: title,
               thumb: thumb,
               id: id,
-              proxyUrl: proxyUrl,
+              //proxyUrl: proxyUrl,
             ),
           ),
         );
@@ -43,7 +43,7 @@ class Webtoon extends StatelessWidget {
                     )
                   ]),
               width: 250,
-              child: Image.network(proxyUrl + thumb),
+              child: Image.network(/*proxyUrl + */ thumb),
             ),
           ),
           const SizedBox(
